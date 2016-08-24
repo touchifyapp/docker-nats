@@ -1,6 +1,6 @@
 # Supported tags and respective Dockerfile links
 
-*  [`0.9.4`, `latest` (Dockerfile)](https://github.com/touchifyapp/docker-nats/blob/master/Dockerfile)
+*  [`0.9.4`, `0.9`, `latest` (Dockerfile)](https://github.com/touchifyapp/docker-nats/blob/master/Dockerfile)
 
 For more information about this image and its history, please see the relevant manifest file (library/nats). This image is updated via [pull requests to the `touchifyapp/nats` GitHub repo](https://github.com/touchifyapp/docker-nats/pulls).
 
@@ -11,6 +11,36 @@ For more information about this image and its history, please see the relevant m
 `nats` is a high performance server for the NATS Messaging System.
 
 ## How to use
+
+### As a simple container
+
+```
+# Run a NATS server
+# Each server exposes multiple ports
+# 4222 is for clients.
+# 8222 is an HTTP management port for information reporting.
+# 6222 is a routing port for clustering.
+# use -p or -P as needed.
+
+$ docker run -d --name nats-main touchify/nats
+```
+
+### As a Docker 1.12 service cluster
+
+```
+# Create a network overlay
+$ docker network create -d overlay events
+
+# Run a NATS cluster.
+# Use NATS_SERVICE_NAME variable to configure the cluster name.
+
+$ docker service create \
+$     --name nats-cluster \
+$     --env NATS_SERVICE_NAME=nats-cluster \
+$     --network events \
+$     --replicas 3 \
+$     touchify/nats
+```
 
 ## Environments variables
 
