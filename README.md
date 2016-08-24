@@ -2,7 +2,7 @@
 
 *  [`0.9.4`, `0.9`, `latest` (Dockerfile)](https://github.com/touchifyapp/docker-nats/blob/master/Dockerfile)
 
-For more information about this image and its history, please see the relevant manifest file (library/nats). This image is updated via [pull requests to the `touchifyapp/nats` GitHub repo](https://github.com/touchifyapp/docker-nats/pulls).
+This image is updated via [pull requests to the `touchifyapp/docker-nats` GitHub repo](https://github.com/touchifyapp/docker-nats/pulls).
 
 # [NATS](http://nats.io): A high-performance cloud native messaging system.
 
@@ -113,7 +113,7 @@ Please see [the Docker installation documentation](https://docs.docker.com/insta
 
 ### Documentation
 
-Documentation for this image is stored in [the `touchifyapp/nats` GitHub repo](https://github.com/touchifyapp/docker-nats).
+Documentation for this image is stored in [the `touchifyapp/docker-nats` GitHub repo](https://github.com/touchifyapp/docker-nats).
 Be sure to familiarize yourself with the repository's README.md file before attempting a pull request.
 
 ### Issues
